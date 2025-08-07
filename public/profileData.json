@@ -1,0 +1,27 @@
+{
+    "img": "/img/S__36798467.gif",
+    "name": "Xuan",
+    "position": "Frontend Developer",
+    "socials": [
+        {
+            "color": "green",
+            "name": "line",
+            "url": "https://line.me/ti/p/tNQzEXfQem"
+        },
+        {
+            "color": "blue",
+            "name": "facebook",
+            "url": "https://www.facebook.com/yang.zi.xuan.323685?mibextid=wwXIfr&rdid=pjZahigNURJJyTp3&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1PuCVZJ8L1%2F%3Fmibextid%3DwwXIfr#"
+        },
+        {
+            "color": "pink",
+            "name": "instagram",
+            "url": "https://www.instagram.com/olivia_0920_/?igsh=MWxjZjRnN2E3eWR1Zg%3D%3D&utm_source=qr#"
+        },
+        {
+            "color": "gray",
+            "name": "threads",
+            "url": "https://www.threads.com/@olivia_0920_?igshid=NTc4MTIwNjQ2YQ%3D%3D"
+        }
+    ]
+}

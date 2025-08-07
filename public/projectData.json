@@ -1,0 +1,204 @@
+[
+    {
+        "img": [
+            "/img/001.gif",
+            "/img/002.gif",
+            "/img/003.gif"
+        ],
+        "name": "Ryan Tompson",
+        "hashtag": [
+            "飲料",
+            "食物",
+            "豬豬"
+        ],
+        "description": "這是一段簡短的描述。",
+        "industry": 0,
+        "category": 0
+    },
+    {
+        "img": [
+            "/img/004.gif"
+        ],
+        "name": "Romina Hadid",
+        "hashtag": [
+            "美妝",
+            "胖胖",
+            "豬豬"
+        ],
+        "description": "這是一段描述，用來測試兩行的效果。描述文字稍微多一點，方便看出排版是否正常。",
+        "industry": 1,
+        "category": 1
+    },
+    {
+        "img": [
+            "/img/005.gif",
+            "/img/006.gif",
+            "/img/007.png",
+            "/img/008.png"
+        ],
+        "name": "Alexa Smith",
+        "hashtag": [
+            "萱萱",
+            "豬豬"
+        ],
+        "description": "這是一段三行的描述，用來模擬比較長的內容。這裡會多寫一些文字來測試 line-clamp 是否正確顯示。希望能夠呈現出多行的換行效果，確保在不同螢幕尺寸上也能正常顯示。",
+        "industry": 2,
+        "category": 2
+    },
+    {
+        "img": [
+            "/img/009.png",
+            "/img/010.png"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "保養",
+            "豬豬"
+        ],
+        "description": "這是一段四行以上的描述文字，專門用來測試長篇內容的排版。當描述過長時，應該會自動被 line-clamp 截斷，或是以捲軸顯示，視 UI 設計而定。這樣的描述能夠用來驗證多行顯示效果，並且檢查不同瀏覽器的呈現一致性。希望這段測試能夠完整覆蓋四行以上的顯示狀況，確保排版沒有問題。",
+        "industry": 3,
+        "category": 3
+    },
+    {
+        "img": [
+            "/img/011.png"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "政府專案",
+            "豬豬"
+        ],
+        "description": "政府專案的描述，用來測試單行的效果。",
+        "industry": 0,
+        "category": 1
+    },
+    {
+        "img": [
+            "/img/001.gif",
+            "/img/004.gif"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "夆夆&萱萱",
+            "食物",
+            "豬豬"
+        ],
+        "description": "這是一段兩行的描述，稍微多寫一些字元讓它能換行。用來測試中等長度的描述是否排版正常。",
+        "industry": 0,
+        "category": 2
+    },
+    {
+        "img": [
+            "/img/002.gif",
+            "/img/005.gif",
+            "/img/008.png"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "桃園",
+            "中壢",
+            "平鎮"
+        ],
+        "description": "這是一段描述，測試城市名稱的專案內容。",
+        "industry": 1,
+        "category": 1
+    },
+    {
+        "img": [
+            "/img/003.gif"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "台北",
+            "新北",
+            "汐止"
+        ],
+        "description": "這是一段描述，台北新北汐止專案的測試。",
+        "industry": 1,
+        "category": 2
+    },
+    {
+        "img": [
+            "/img/006.gif",
+            "/img/009.png",
+            "/img/011.png",
+            "/img/010.png"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "晴天",
+            "豬豬"
+        ],
+        "description": "晴天的專案描述，這是一段兩行的測試文字，模擬晴天主題的內容。",
+        "industry": 2,
+        "category": 2
+    },
+    {
+        "img": [
+            "/img/007.png"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "雨天",
+            "不想上班"
+        ],
+        "description": "雨天的專案描述。",
+        "industry": 2,
+        "category": 1
+    },
+    {
+        "img": [
+            "/img/0802.jpg",
+            "/img/0803.jpg",
+            "/img/1014.jpg"
+        ],
+        "name": "Jenna Kardi",
+        "hashtag": [
+            "星期一",
+            "不想上班"
+        ],
+        "description": "星期一專案描述，用來測試週期性內容。",
+        "industry": 1,
+        "category": 3
+    },
+    {
+        "img": [
+            "/img/0802.jpg"
+        ],
+        "name": "PigXuan",
+        "hashtag": [
+            "星期二",
+            "不想上班"
+        ],
+        "description": "星期二專案描述，這是一段短描述。",
+        "industry": 1,
+        "category": 2
+    },
+    {
+        "img": [
+            "/img/1014.jpg",
+            "/img/0803.jpg"
+        ],
+        "name": "PigXuan",
+        "hashtag": [
+            "8/5",
+            "3周年快樂"
+        ],
+        "description": "我是胖胖夆&胖胖萱",
+        "industry": 1,
+        "category": 2
+    },
+    {
+        "img": [
+            "/img/0803.jpg"
+        ],
+        "name": "PigXuan",
+        "hashtag": [
+            "我是夆夆寶",
+            "你是豬萱寶"
+        ],
+        "description": "我不是是胖胖夆&然後你是胖胖萱",
+        "industry": 1,
+        "category": 2
+    }
+]
