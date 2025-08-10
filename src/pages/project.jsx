@@ -27,7 +27,7 @@ function project() {
 
     useEffect(() => {
         Promise.all([
-            fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/projectData.json?t=" + Date.now()).then(res => res.json()),
+            fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/json/projectData.json?t=" + Date.now()).then(res => res.json()),
             fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/industry.json?t=" + Date.now()).then(res => res.json()),
             fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/category.json?t=" + Date.now()).then(res => res.json()),
         ])
