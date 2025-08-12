@@ -4,6 +4,7 @@ import { Typography } from "@material-tailwind/react";
 export default function lightbox({ project, onClose }) {
     if (!project) return null; // 沒有圖片就不渲染
     const images = Array.isArray(project.img) ? project.img : [project.img];
+    const s3BaseUrl = "https://pigxuan-db.s3.ap-northeast-1.amazonaws.com";
     return (
         <div
             className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
@@ -35,7 +36,7 @@ export default function lightbox({ project, onClose }) {
                     {images.map((src, i) => (
                         <img
                             key={i}
-                            src={src}
+                            src={src ? `${ s3BaseUrl }${ src }` : '/placeholder.jpg'}
                             alt={`Lightbox-${ i }`}
                             className="
                                 rounded shadow 
