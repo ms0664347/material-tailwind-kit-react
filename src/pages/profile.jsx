@@ -70,7 +70,7 @@ export function Profile() {
           <div className="xl:col-span-2 lg:col-span-2 md:col-span-1 col-span-1 flex justify-center md:justify-start ml-[110%] md:ml-[25%] z-10">
             {profile && (
               <ProfileCard
-                img={images.preview || null}
+                img={profile.img}
                 name={profile.name}
                 title={profile.title}
                 socials={

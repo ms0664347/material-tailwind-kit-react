@@ -4,12 +4,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 export function ProjectCard({ img, name, hashtag, socials, description }) {
+  const s3BaseUrl = "https://pigxuan-db.s3.ap-northeast-1.amazonaws.com";
   return (
     <div className="shadow-lg shadow-gray-400/50 rounded-2xl bg-white p-4">
       <Card color="transparent" shadow={false} className="text-center">
         <div className="w-full w-full h-[150px] md:h-[220px] lg:h-[300px] overflow-hidden rounded-lg">
           <Avatar
-            src={img}
+            src={img ? `${ s3BaseUrl }${ img }` : '/placeholder.jpg'}
             alt={name}
             size="xxl"
             variant="rounded"

@@ -2,11 +2,12 @@ import PropTypes from "prop-types";
 import { Card, Avatar, Typography } from "@material-tailwind/react";
 
 export function ProfileCard({ img, name, title, socials, description }) {
+  const s3BaseUrl = "https://pigxuan-db.s3.ap-northeast-1.amazonaws.com";
   return (
     <Card color="transparent" shadow={false} className="text-center">
       <div className="relative bg-white flex items-center justify-center h-full w-full md:min-w-[200px] md:min-h-[200px] rounded-lg shadow-lg shadow-gray-400/60">
         <Avatar
-          src={img}
+          src={img ? `${ s3BaseUrl }${ img }` : '/placeholder.jpg'}
           alt={name}
           size="xxl"
           variant="rounded"
