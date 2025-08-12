@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Typography } from "@material-tailwind/react";
+import { getFlowChart } from "./s3get";
 
 export default function flowChart() {
     const [active, setActive] = useState(1);
@@ -8,8 +9,7 @@ export default function flowChart() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/flowChart.json?t=" + Date.now()).then(res => res.json())
-
+        getFlowChart()
             .then((flowChartData) => {
                 setFlowChart(flowChartData);
             })

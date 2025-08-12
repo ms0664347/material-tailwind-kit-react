@@ -26,7 +26,7 @@ export function ProjectCard({ img, name, hashtag, socials, description }) {
                 key={index}
                 className="px-2 py-1 bg-blue-gray-50 text-blue-gray-500 text-xs rounded-full"
               >
-                #{tag}
+                {tag}
               </span>
             ))}
           </div>
@@ -58,7 +58,7 @@ export function ProjectCard({ img, name, hashtag, socials, description }) {
 ProjectCard.defaultProps = {
   hashtag: "",
   socials: null,
-  description: "這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，這是一段測試文字，",
+  description: "",
 };
 
 ProjectCard.propTypes = {

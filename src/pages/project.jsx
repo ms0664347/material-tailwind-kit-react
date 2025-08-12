@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import "../css/project.css";
 import Lightbox from "./Lightbox";
+import { getProjectData, getIndustryData, getCategoryData } from "./s3get";
 
 
 function project() {
@@ -27,9 +28,9 @@ function project() {
 
     useEffect(() => {
         Promise.all([
-            fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/json/projectData.json?t=" + Date.now()).then(res => res.json()),
-            fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/industry.json?t=" + Date.now()).then(res => res.json()),
-            fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/category.json?t=" + Date.now()).then(res => res.json()),
+            getProjectData(),
+            getIndustryData(),
+            getCategoryData(),
         ])
             .then(([projectDate, industryData, categoryData]) => {
                 setProject(projectDate);
@@ -53,9 +54,9 @@ function project() {
     // 先篩選
     const filteredTeam = project.filter((member) => {
         const categoryMatch =
-            selectedCategory === "" || member.category === parseInt(selectedCategory);
+            selectedCategory === "" || member.category === selectedCategory;
         const industryMatch =
-            selectedIndustry === "" || member.industry === parseInt(selectedIndustry);
+            selectedIndustry === "" || member.industry === selectedIndustry;
 
         const searchMatch =
             searchTerm.trim() === "" ||

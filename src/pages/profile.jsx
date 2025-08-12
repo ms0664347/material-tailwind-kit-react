@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { ProfileCard } from "../widgets/cards/profile-card.jsx";
 import { ProjectCard } from "../widgets/cards/project-card.jsx";
 import { FingerPrintIcon } from "@heroicons/react/24/solid";
+import { getProjectData, getProfileData, getBioData, getConcept } from "./s3get";
 
 export function Profile() {
 
@@ -23,18 +24,22 @@ export function Profile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const s3BaseUrl = "https://pigxuan-db.s3.ap-northeast-1.amazonaws.com";
+  const [images, setImages] = useState(null);
+
   useEffect(() => {
     Promise.all([
-      fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/profileData.json?t=" + Date.now()).then(res => res.json()),
-      fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/bio.json?t=" + Date.now()).then(res => res.json()),
-      fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/concept.json?t=" + Date.now()).then(res => res.json()),
-      fetch("https://pigxuan.s3.ap-northeast-1.amazonaws.com/projectData.json?t=" + Date.now()).then(res => res.json()),
+      getProfileData(),
+      getBioData(),
+      getConcept(),
+      getProjectData(),
     ])
       .then(([profileData, experienceData, conceptData, projectData]) => {
         setProfile(profileData);
         setExperience(experienceData);
         setConcept(conceptData);
         setProjects(projectData);
+        setImages(profileData.img ? { file: null, preview: s3BaseUrl + profileData.img } : null);
       })
       .catch(err => setError(err))
       .finally(() => setLoading(false));
@@ -65,7 +70,7 @@ export function Profile() {
           <div className="xl:col-span-2 lg:col-span-2 md:col-span-1 col-span-1 flex justify-center md:justify-start ml-[110%] md:ml-[25%] z-10">
             {profile && (
               <ProfileCard
-                img={profile.img}
+                img={images.preview || null}
                 name={profile.name}
                 title={profile.title}
                 socials={
