@@ -72,7 +72,8 @@ export function Profile() {
               <ProfileCard
                 img={profile.img}
                 name={profile.name}
-                title={profile.title}
+                title={profile.position}
+                description={profile.intro}
                 socials={
                   <div className="flex items-center gap-2">
                     {profile.socials.map(({ color, name, url }) => (

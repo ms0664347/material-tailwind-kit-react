@@ -29,7 +29,7 @@ export function ProfileCard({ img, name, title, socials, description }) {
       )}
       {/* 描述，手機2行，桌面3行 */}
       {description && (
-        <p className="mt-3 text-sm text-blue-gray-400 leading-relaxed px-2 line-clamp-2 md:line-clamp-3">
+        <p className="min-h-[50px] mt-3 text-sm text-blue-gray-400 leading-relaxed px-2 line-clamp-2 md:line-clamp-3">
           {description}
         </p>
       )}
