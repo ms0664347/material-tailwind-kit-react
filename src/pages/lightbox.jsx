@@ -46,7 +46,7 @@ export default function lightbox({ project, onClose }) {
                                 lg:mt-8
                                 min-w-[400px] min-h-auto
                                 md:min-w-[70vw] md:min-h-auto
-                                lg:min-w-[50vw] lg:min-h-auto
+                                lg:min-w-[60vw] lg:min-h-auto
                                 max-w-[400px] min-h-auto
                                 md:max-w-[70vw] md:max-h-[70vw]
                                 lg:max-w-[50vw] lg:max-h-[35vw]
