@@ -17,8 +17,8 @@ export default function lightbox({ project, onClose }) {
                     max-w-none max-h-none
                     sm:w-[90vw] sm:h-[90vh]
                     md:w-[85vw] md:h-[85vh]
-                    
                     overflow-y-auto 
+                    overflow-hidden   /* 新增這行 */
                     p-0 sm:p-8 
                     bg-white 
                     sm:rounded-lg rounded-none
@@ -32,7 +32,7 @@ export default function lightbox({ project, onClose }) {
             >
 
                 {/* 圖片（直向排列） */}
-                <div className="flex flex-col gap-6 items-center">
+                <div className="flex flex-col gap-3 items-center">
                     {images.map((src, i) => (
                         <img
                             key={i}
@@ -41,17 +41,18 @@ export default function lightbox({ project, onClose }) {
                             className="
                                 rounded shadow 
                                 object-contain
-                                mt-12
+                                mt-4
                                 md:mt-4
                                 lg:mt-8
                                 min-w-[400px] min-h-auto
                                 md:min-w-[70vw] md:min-h-auto
                                 lg:min-w-[50vw] lg:min-h-auto
                                 max-w-[400px] min-h-auto
-                                md:max-w-[70vw] min-h-auto
-                                lg:max-w-[50vw] min-h-auto
+                                md:max-w-[70vw] md:max-h-[70vw]
+                                lg:max-w-[50vw] lg:max-h-[35vw]
                                 shadow-2xl
-                                drop-shadow-[0_8px_12px_rgba(0,0,0,0.5)]
+                                drop-shadow-[0_4px_6px_rgba(0,0,0,0.2)]
+
                             "
                         />
                     ))}
@@ -66,6 +67,26 @@ export default function lightbox({ project, onClose }) {
                     </div>
 
                 )}
+
+                {/* 返回按鈕 */}
+                <div className="w-full flex justify-center mt-6 mb-6">
+                    <button
+                        className="
+                            px-6 py-2 
+                            bg-black         /* 黑底 */
+                            text-white       /* 白字 */
+                            rounded-lg 
+                            shadow-md 
+                            hover:bg-gray-800 
+                            active:bg-gray-900
+                            transition
+                        "
+                        onClick={onClose}
+                    >
+                        返回
+                    </button>
+
+                </div>
             </div>
         </div>
     );

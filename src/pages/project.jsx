@@ -89,9 +89,6 @@ function project() {
         setCurrentPage(0); // 🔄 搜尋時回到第一頁
     };
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>載入失敗: {error.message}</div>;
-
     return (
         <section className="px-4 pt-12 pb-16">
             <div className="container mx-auto">

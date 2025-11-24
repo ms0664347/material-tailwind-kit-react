@@ -17,8 +17,6 @@ export default function flowChart() {
             .finally(() => setLoading(false));
     }, []);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>載入失敗: {error.message}</div>;
     return (
         <>
             <div className="flex justify-center">
@@ -33,36 +31,39 @@ export default function flowChart() {
                     <div className="flex items-center w-full">
                         {flow.content?.map((step, index) => (
                             <React.Fragment key={step.id}>
+
                                 {/* 節點 */}
-                                <div className="flex flex-col items-center mt-6">
+                                <div className="flex flex-col items-center mt-6 w-[80px]">
                                     <div
                                         className={`w-6 h-6 rounded-full z-10 cursor-pointer transition-all duration-300
-                                        ${ active >= index ? "bg-green-500 scale-125" : "bg-gray-300" }`}
+                        ${ active >= index ? "bg-green-500 scale-125" : "bg-gray-300" }`}
                                         onMouseEnter={() => setActive(index)}
                                         onMouseLeave={() => setActive(-1)}
                                     />
-                                    <span className="mt-2 text-sm font-medium text-center block min-h-[1rem]">
+                                    <span className="mt-2 text-sm md:text-base text-center leading-tight block min-h-[1rem]">
                                         {(step.title ?? '').trim() || '\u00A0'}
                                     </span>
 
                                 </div>
 
-                                {/* 兩點之間的線：用 flex-1 等分寬度 */}
+                                {/* 中間線 */}
                                 {index < flow.content.length - 1 && (
                                     <div
                                         className={`h-1 flex-1 mx-2 transition-colors duration-300
                                         ${ active > index ? "bg-green-500" : "bg-gray-300" }`}
                                     />
                                 )}
+
                             </React.Fragment>
                         ))}
                     </div>
                 </div>
 
 
+
                 {/* 下方卡片 */}
                 <div className="flex justify-center">
-                    <div className="flex gap-8 max-w-5xl w-full">
+                    <div className="flex flex-col md:flex-row gap-6 max-w-5xl w-full">
                         {flow.content?.map((step, index) => (
                             <div
                                 key={step?.id ?? index}
