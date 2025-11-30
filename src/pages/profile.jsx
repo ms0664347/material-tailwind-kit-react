@@ -45,17 +45,17 @@ export function Profile() {
             .finally(() => setLoading(false));
     }, []);
 
-    useEffect(() => {
-        if (projects.length === 0) return;
+    // useEffect(() => {
+    //     if (projects.length === 0) return;
 
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % projects.length);
-        }, 5000); // 每 3 秒換一個
+    //     const interval = setInterval(() => {
+    //         setCurrentIndex((prev) => (prev + 1) % projects.length);
+    //     }, 5000); // 每 3 秒換一個
 
-        return () => clearInterval(interval); // 清除 interval 避免 memory leak
-    }, [projects]);
+    //     return () => clearInterval(interval); // 清除 interval 避免 memory leak
+    // }, [projects]);
 
-    if (projects.length === 0) return null; // 還沒載入就不渲染
+    // if (projects.length === 0) return null; // 還沒載入就不渲染
 
     const currentProject = projects[currentIndex];
 

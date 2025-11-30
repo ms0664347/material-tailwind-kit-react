@@ -27,7 +27,7 @@ export default function flowChart() {
 
             <div className="w-full px-10">
                 {/* 上方線條 + 節點（等分版） */}
-                <div className="w-full max-w-5xl mx-auto px-6 mb-10">
+                <div className="hidden md:block w-full max-w-5xl mx-auto px-6 mb-10">
                     <div className="flex items-center w-full">
                         {flow.content?.map((step, index) => (
                             <React.Fragment key={step.id}>
@@ -36,7 +36,7 @@ export default function flowChart() {
                                 <div className="flex flex-col items-center mt-6 w-[80px]">
                                     <div
                                         className={`w-6 h-6 rounded-full z-10 cursor-pointer transition-all duration-300
-                        ${ active >= index ? "bg-green-500 scale-125" : "bg-gray-300" }`}
+                                        ${ active >= index ? "bg-green-500 scale-125" : "bg-gray-300" }`}
                                         onMouseEnter={() => setActive(index)}
                                         onMouseLeave={() => setActive(-1)}
                                     />

@@ -32,8 +32,9 @@ function project() {
             getIndustryData(),
             getCategoryData(),
         ])
-            .then(([projectDate, industryData, categoryData]) => {
-                setProject(projectDate);
+            .then(([projectData, industryData, categoryData]) => {
+                const sorted = sortProjects(projectData);
+                setProject(sorted);
                 setIndustry(industryData);
                 setCategory(categoryData);
             })
@@ -50,6 +51,13 @@ function project() {
 
         return () => clearTimeout(handler);
     }, [searchTerm]);
+
+    const sortProjects = (list) => {
+        if (!Array.isArray(list)) return [];
+        return [...list].sort((a, b) =>
+            (Number(b.sort) || 0) - (Number(a.sort) || 0)
+        );
+    };
 
     // 先篩選
     const filteredTeam = project.filter((member) => {
