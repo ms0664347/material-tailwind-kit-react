@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react";
-import { getBgData } from "./s3get";
 import { Typography } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
+import { getBgData } from "../api/s3get";
 export function TopContainer() {
     const [images, setImages] = useState([]); // [{src, name}]
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
     const s3BaseUrl = "https://pigxuan-db.s3.ap-northeast-1.amazonaws.com";
 
     useEffect(() => {
@@ -19,9 +16,7 @@ export function TopContainer() {
                 }));
                 setImages(imgs);
             } catch (err) {
-                setError(err);
-            } finally {
-                setLoading(false);
+                console.log(err);
             }
         })();
     }, []);
@@ -80,19 +75,17 @@ export function TopContainer() {
                         </Typography>
                     ))}
                 </div>
-
             </div>
 
-
             <div className="
-                relative 
-                mt-[0px]      /* 手機時 90px 空間 */
-                md:mt-[5%]  /* 平板以上給更多空間 */
-                lg:mt-[5%]  /* 平板以上給更多空間 */
-                lg:mb-[1%]
-                h-[30vh] sm:h-[50vh] md:h-[55vh] lg:h-[70vh] 
-                overflow-hidden justify-center
-            ">
+                    relative 
+                    mt-[0px]      /* 手機時 90px 空間 */
+                    md:mt-[5%]  /* 平板以上給更多空間 */
+                    lg:mt-[5%]  /* 平板以上給更多空間 */
+                    lg:mb-[1%]
+                    h-[30vh] sm:h-[50vh] md:h-[55vh] lg:h-[70vh] 
+                    overflow-hidden justify-center
+                ">
                 {images.map((img, index) => (
                     <img
                         key={index}

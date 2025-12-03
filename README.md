@@ -1,182 +1,97 @@
-# [Material Tailwind Kit React](http://demos.creative-tim.com/material-tailwind-kit-react/#/?ref=readme-mtkr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-tailwind-kit-react&text=Check%20Material%20Tailwind%20Kit%20React%20made%20by%20@CreativeTim%20#webdesign%20#kit%20#materialdesign%20#react%20#materialtailwind%20#tailwindcss%20https://www.creative-tim.com/product/material-tailwind-kit-react)
+Portfolio Website
 
-![version](https://img.shields.io/badge/version-2.1.0-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-tailwind-kit-react.svg)](https://github.com/creativetimofficial/material-tailwind-kit-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-tailwind-kit-react.svg)](https://github.com/creativetimofficial/material-tailwind-kit-react/issues?q=is%3Aissue+is%3Aclosed)
+個人作品集網站｜React + Tailwind + Material Tailwind + AWS S3
 
-![Image](https://s3.amazonaws.com/creativetim_bucket/products/486/original/material-tailwind-kit-react.jpg)
+這是一個以 React + Tailwind CSS + Material Tailwind UI 打造的個人作品集網站，用來展示個人開發的前後端作品、個人資料、圖片展示流程與互動元件。網站使用 AWS S3 + CloudFront 進行部署與圖片讀取，並搭配自製 UI 元件讓內容更容易擴充與維護。
+本專案參考 Material Tailwind Kit React 的 UI 設計，並進行大量重構、模組拆分與清理，使整體成為個人化的單頁作品集。
 
-Material Tailwind Kit React is our newest free Material Tailwind UI Kit based on Tailwind CSS and React. If you’re a developer looking to create an ui kit that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative Material Tailwind, Tailwind CSS & React ui kit comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+Demo（展示網站）
 
-**Fully Coded Elements**
+Live Demo https://d2bnp6sqlvy8vj.cloudfront.net/home
 
-Material Tailwind Kit React is built with over 40 frontend individual elements coming from @material-tailwind/react, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using props and tailwind css classnames. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
+技術架構（Tech Stack）
+Frontend
 
-This free Material Tailwind, Tailwind CSS & React UI Kit is coming with prebuilt design blocks, so the development process is seamless, switching from our pages to the real website is very easy to be done.
+React 18
 
-View [all components here](https://www.material-tailwind.com/docs/react/button).
+Vite
 
-**Documentation built by Developers**
+Tailwind CSS
 
-Each element is well presented in very complex documentation.
+Material Tailwind UI Components
 
-You can read more about the [documentation here](https://www.material-tailwind.com/docs/react/installation).
+自製：Project Card / Profile Card / Lightbox / FlowChart / TopContainer / Footer
 
-**Example Pages**
+Cloud & Deployment
 
-If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. You will be able to quickly set up the basic structure for your web project.
+AWS S3（靜態網站＋圖片儲存）
 
-View [example pages here](https://demos.creative-tim.com/material-tailwind-kit-react/#/home).
+AWS CloudFront（CDN ＋ HTTPS）
 
-**HELPFUL LINKS**
+S3 JSON 讀取、圖片自動 File 化
 
-- View [Github Repository](https://github.com/creativetimofficial/material-tailwind-kit-react)
-- Check [FAQ Page](https://www.creative-tim.com/faq)
+專案功能（Features）
+作品展示區（Projects）
 
-#### Special thanks
+由 AWS S3 JSON＋圖片組成
 
-During the development of this ui kit, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
+每張作品卡片可查看詳細內容
 
-- [Material Tailwind](https://material-tailwind.com/) - Material Tailwind is an easy to use components library for Tailwind CSS and Material Design.
-- [Hero Icons](https://heroicons.com/) - Beautiful hand-crafted SVG icons.
-- [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with Material Tailwind Kit React. You can use it to gain insights into your sources of traffic.
+支援 Lightbox 放大
 
-Let us know your thoughts below. And good luck with development!
+支援行動裝置 RWD
 
-## Table of Contents
+🔹 FlowChart 流程圖
 
-- [Versions](#versions)
-- [Demo](#demo)
-- [Quick Start](#quick-start)
-- [Deploy](#deploy)
-- [Documentation](#documentation)
-- [File Structure](#file-structure)
-- [Browser Support](#browser-support)
-- [Resources](#resources)
-- [Reporting Issues](#reporting-issues)
-- [Technical Support or Questions](#technical-support-or-questions)
-- [Licensing](#licensing)
-- [Useful Links](#useful-links)
+React＋Tailwind 客製化流程圖
 
-## Versions
+清楚展示專案邏輯或工作流程
 
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr)
+🔹 Profile 個人區塊
 
-| React |
-| ----- |
+個人資料卡片 ProfileCard
 
-| [![Material Tailwind Kit React](https://s3.amazonaws.com/creativetim_bucket/products/486/thumb/material-tailwind-kit-react.jpg)](http://demos.creative-tim.com/material-tailwind-kit-react/#/?ref=readme-mtkr)
+React＋Tailwind UI 設計
 
-## Demo
+🔹 完全前端 React SPA
 
-- [Home page](https://demos.creative-tim.com/material-tailwind-kit-react/#/home?ref=readme-mtkr)
-- [Profile page](https://demos.creative-tim.com/material-tailwind-kit-react/#/profile?ref=readme-mtkr)
-- [Sign in page](https://demos.creative-tim.com/material-tailwind-kit-react/#/sign-in?ref=readme-mtkr)
-- [Sign up page](https://demos.creative-tim.com/material-tailwind-kit-react/#/sign-up?ref=readme-mtkr)
+無後端路由
 
-[View More](https://demos.creative-tim.com/material-tailwind-kit-react/#/?ref=readme-mtkr).
+所有組件模組化整理
 
-## Quick start
+專案結構（Project Structure）
 
-Quick start options:
+src/
+  api/
+    s3.js                 # AWS S3 圖片與 JSON 讀取
+  assets/
+    # 你的靜態資源
+  components/
+    cards/
+      ProfileCard.jsx
+      ProjectCard.jsx
+    FlowChart.jsx
+    Footer.jsx
+    Home.jsx
+    Lightbox.jsx
+    Profile.jsx
+    Project.jsx
+    TopContainer.jsx
+  App.jsx
+  main.jsx
 
-- Downdload from [Creative Tim](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr).
+public/
+  css/
+  img/
 
-## Terminal Commands
+為符合 MIT 規範，本專案保留 Material Tailwind Kit React 之授權聲明：
+This project includes UI components and code under the MIT License from Creative Tim.
+Copyright © 2023 Creative Tim
+Source: https://github.com/creativetimofficial/material-tailwind-kit-react
 
-1. Download and Install NodeJs LTS version from [NodeJs Official Page](https://nodejs.org/en/download/).
-2. Navigate to the root ./ directory of the product and run `npm install` or `yarn install` or `pnpm install` to install our local dependencies.
 
-## Deploy
+作者（Author）
 
-:rocket: You can deploy your own version of the template to Genezio with one click:
-
-[![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/creativetimofficial/material-tailwind-kit-react&utm_source=github&utm_medium=referral&utm_campaign=github-creativetim&utm_term=deploy-project&utm_content=button-head)
-
-
-## Documentation
-
-The documentation for the Material Tailwind Kit React is hosted at our [website](https://material-tailwind.com/?ref=readme-mtkr).
-
-### What's included
-
-Within the download you'll find the following directories and files:
-
-```
-material-tailwind-kit-react
-    ├── public
-    │   ├── css
-    │   └── img
-    ├── src
-    │   ├── data
-    │   ├── pages
-    │   ├── widgets
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── routes.jsx
-    ├── .gitignore
-    ├── CHANGELOG.md
-    ├── index.html
-    ├── ISSUE_TEMPLATE.md
-    ├── jsconfig.json
-    ├── LICENSE
-    ├── package.json
-    ├── postcsss.config.cjs
-    ├── prettier.config.cjs
-    ├── README.md
-    ├── tailwind.config.cjs
-    └── vite.config.js
-```
-
-## Browser Support
-
-At present, we officially aim to support the last two versions of the following browsers:
-
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
-
-## Resources
-
-- [Live Preview](https://demos.creative-tim.com/material-tailwind-kit-react/#/home?ref=readme-mtkr)
-- [Download Page](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr)
-- Documentation is [here](https://material-tailwind.com/?ref=readme-mtkr)
-- [License Agreement](https://www.creative-tim.com/license?ref=readme-mtkr)
-- [Support](https://www.creative-tim.com/contact-us?ref=readme-mtkr)
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-tailwind-kit-react/issues)
-- [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Material Tailwind Kit React. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Material Tailwind Kit React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/material-tailwind-kit-react?ref=readme-mtkr).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-mtkr) instead of opening an issue.
-
-## Licensing
-
-- Copyright 2023 [Creative Tim](https://www.creative-tim.com?ref=readme-mtkr)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-mtkr)
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/templates?ref=readme-mtkr) from Creative Tim
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-mtkr) from Creative Tim
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-mtkr) (earn money)
-
-##### Social Media
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
+陳昱夆
+Full-stack Engineer｜Java / Spring Boot / React / AWS
+Email：a0917379137@gmail.com

@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "@material-tailwind/react";
-import { getFlowChart } from "./s3get";
+import { getFlowChart } from "../api/s3get";
 
 export default function flowChart() {
     const [active, setActive] = useState(-1);
     const [flow, setFlow] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         getFlowChart()
             .then((flowData) => {
                 setFlow(flowData);
             })
-            .catch(err => setError(err))
-            .finally(() => setLoading(false));
+            .catch(err => console.error(err));
     }, []);
 
     return (
@@ -59,8 +55,6 @@ export default function flowChart() {
                     </div>
                 </div>
 
-
-
                 {/* 下方卡片 */}
                 <div className="flex justify-center">
                     <div className="flex flex-col md:flex-row gap-6 max-w-5xl w-full">
@@ -85,8 +79,6 @@ export default function flowChart() {
                         ))}
                     </div>
                 </div>
-
-
             </div>
         </>
     );

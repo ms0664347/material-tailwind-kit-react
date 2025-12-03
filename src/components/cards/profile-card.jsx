@@ -14,15 +14,10 @@ export function ProfileCard({ img, name, title, socials, description }) {
                     className="h-full w-full object-contain"
                 />
             </div>
-
-
             <Typography variant="h5" color="blue-gray" className="mt-6 mb-1">
                 {name}
             </Typography>
             {title && (
-                // <Typography className="font-bold text-blue-gray-500">
-                //   {title}
-                // </Typography>
                 <Typography className="mt-3 text-lg text-blue-gray-700 leading-relaxed px-2 min-h-[30px] line-clamp-2 md:line-clamp-3">
                     {title}
                 </Typography>
@@ -50,7 +45,5 @@ ProfileCard.propTypes = {
     socials: PropTypes.node,
     description: PropTypes.string,
 };
-
-ProfileCard.displayName = "/src/widgets/layout/profile-card.jsx";
 
 export default ProfileCard;

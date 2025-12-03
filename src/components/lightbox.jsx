@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@material-tailwind/react";
 
 export default function lightbox({ project, onClose }) {
+
     if (!project) return null; // 沒有圖片就不渲染
     const images = Array.isArray(project.img) ? project.img : [project.img];
     const s3BaseUrl = "https://pigxuan-db.s3.ap-northeast-1.amazonaws.com";
@@ -85,7 +86,6 @@ export default function lightbox({ project, onClose }) {
                     >
                         返回
                     </button>
-
                 </div>
             </div>
         </div>

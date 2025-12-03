@@ -1,28 +1,22 @@
-import { ProjectCard } from "../widgets/cards/project-card.jsx";
+import { ProjectCard } from "./cards/project-card.jsx";
 import { Option, Select, Input } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
+import { getProjectData, getIndustryData, getCategoryData } from "../api/s3get.js";
 import ReactPaginate from "react-paginate";
-import "../css/project.css";
-import Lightbox from "./Lightbox";
-import { getProjectData, getIndustryData, getCategoryData } from "./s3get";
+import Lightbox from "./lightbox.jsx";
+import "../assets/css/project.css";
 
 
 function project() {
 
     const [industry, setIndustry] = useState([]);
     const [category, setCategory] = useState([]);
-
     const [searchTerm, setSearchTerm] = useState(""); // 🔍 搜尋關鍵字
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(""); // 延遲後的值
-
     const [lightboxItem, setLightboxItem] = useState(null);
     const [project, setProject] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedIndustry, setSelectedIndustry] = useState("");
-
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
     const [currentPage, setCurrentPage] = useState(0); // react-paginate 預設從 0 開始
     const itemsPerPage = 6; // 每頁顯示幾個
 
@@ -38,8 +32,7 @@ function project() {
                 setIndustry(industryData);
                 setCategory(categoryData);
             })
-            .catch(err => setError(err))
-            .finally(() => setLoading(false));
+            .catch(err => console.error(err));
     }, []);
 
     // ✅ Debounce：300ms 後才更新 searchTerm
@@ -78,7 +71,6 @@ function project() {
     // 再分頁
     const startIndex = currentPage * itemsPerPage;
     const currentItems = filteredTeam.slice(startIndex, startIndex + itemsPerPage);
-
     const totalPages = Math.ceil(filteredTeam.length / itemsPerPage);
 
     // 當篩選條件改變時，回到第一頁
@@ -161,8 +153,6 @@ function project() {
                     ))}
                 </div>
 
-
-
                 {/* 燈箱：傳 project & 關閉方法 */}
                 <Lightbox project={lightboxItem} onClose={() => setLightboxItem(null)} />
 
@@ -185,6 +175,5 @@ function project() {
         </section>
     );
 }
-
 
 export default project;
